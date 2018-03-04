@@ -50,9 +50,7 @@ class Monitor {
             connection.destroy()
           });
         } else {
-
-          console.log("calling " + this.host+" "+this.port);
-
+          // call preformatted data
           retriever.call()
           .then(state => {
             connection.write(JSON.stringify(jsonrpc.success(id, state))+"\n");
